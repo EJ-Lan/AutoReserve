@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Add my package">
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/user/User.java" afterDir="false" />
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,13 +70,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680723032819</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Create classes and update main logic">
+      <created>1680724686153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680724686153</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initialization commit" />
     <MESSAGE value="Add my package" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add my package" />
+    <MESSAGE value="Create classes and update main logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create classes and update main logic" />
   </component>
 </project>

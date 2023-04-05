@@ -39,7 +39,7 @@ public class Main {
                     // Exit
                     break;
                 default:
-                    System.out.println("Invalid Input");
+                    System.out.println(input + " not a valid option");
             }
 
             if (input != 7) {
