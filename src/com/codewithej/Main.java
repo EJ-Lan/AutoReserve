@@ -1,20 +1,29 @@
 package com.codewithej;
 
+import com.codewithej.booking.BookingService;
+import com.codewithej.car.Car;
+import com.codewithej.car.CarService;
+import com.codewithej.user.User;
+import com.codewithej.user.UserService;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        BookingService bookingService = new BookingService();
+        CarService carService = new CarService();
+        UserService userService = new UserService();
 
         displayMenu();
         System.out.println();
 
         int input = Integer.valueOf(scanner.nextLine());
-        cliAction(input);
+        cliAction(input, bookingService, carService, userService);
 
     }
 
-    private static void cliAction(int input) {
+    private static void cliAction(int input, BookingService bookingService, CarService carService,UserService userService) {
         while (input != 7) {
             switch (input) {
                 case 1:
@@ -28,12 +37,15 @@ public class Main {
                     break;
                 case 4:
                     // View Available Cars
+                    viewAllCars(carService);
                     break;
                 case 5:
                     // View Available Electric Cars
+                    viewAllElectricCars(carService);
                     break;
                 case 6:
                     // View all users
+                    viewAllUsers(userService);
                     break;
                 case 7:
                     // Exit
@@ -62,4 +74,38 @@ public class Main {
         System.out.println("6 - View All Users");
         System.out.println("7 - Exit");
     }
+
+    private static void viewAllUsers(UserService userService) {
+        User[] users = userService.getUsers();
+
+        for (User user: users) {
+            System.out.println(user.toString());
+        }
+    }
+
+    private static void viewAllCars(CarService carService) {
+        Car[] cars = carService.getCars();
+
+        for (Car car: cars) {
+            System.out.println(car.toString());
+        }
+    }
+
+    private static void viewAllElectricCars(CarService carService) {
+        Car[] cars = carService.getCars();
+
+        boolean found = false;
+
+        for (Car car: cars) {
+            if (car.getElectric()) {
+                System.out.println(car.toString());
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No electric cars");
+        }
+    }
+
 }
