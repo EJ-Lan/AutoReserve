@@ -14,12 +14,12 @@ public class Booking {
     private boolean isCanceled;
     private LocalTime bookingTime;
 
-    public Booking(UUID bookingID, User user, Car car, boolean isCanceled, LocalTime bookingTime) {
+    public Booking(UUID bookingID, User user, Car car) {
         this.bookingID = bookingID;
         this.user = user;
         this.car = car;
-        this.isCanceled = isCanceled;
-        this.bookingTime = bookingTime;
+        this.isCanceled = false;
+        this.bookingTime = LocalTime.now();
     }
 
     public User getUser() {

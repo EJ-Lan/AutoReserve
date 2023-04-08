@@ -92,7 +92,9 @@ public class Main {
         Car[] cars = carService.getCars();
 
         for (Car car: cars) {
-            System.out.println(car.toString());
+            if (car != null) {
+                System.out.println(car.toString());
+            }
         }
     }
 
@@ -102,9 +104,11 @@ public class Main {
         boolean found = false;
 
         for (Car car: cars) {
-            if (car.getElectric()) {
-                System.out.println(car.toString());
-                found = true;
+            if (car != null) {
+                if (car.getElectric()) {
+                    System.out.println(car.toString());
+                    found = true;
+                }
             }
         }
 
@@ -114,15 +118,89 @@ public class Main {
     }
 
     private static void viewAllBookings(BookingService bookingService) {
+        Booking[] bookings = bookingService.getBookings();
+
+        boolean found = false;
+
+        for (Booking booking : bookings) {
+            if (booking == null) {
+                continue;
+            } else {
+                System.out.println(booking.toString());
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No bookings available");
+        }
 
     }
 
     private static void viewAllUserBookedCars(BookingService bookingService, UserService userService, Scanner scanner) {
+        viewAllUsers(userService);
+        System.out.println("Choose user ID");
+        String id = scanner.nextLine();
 
+        User[] users = userService.getUsers();
+        User curUser = null;
+
+        for (User user : users) {
+            if (user.getId().toString().equals(id)) {
+                curUser = user;
+            }
+        }
+
+        if (curUser == null) {
+            System.out.println("User not found");
+            return;
+        }
+
+        Booking[] bookings = bookingService.getBookings();
+
+        bookingService.searchBookingByUser(curUser);
     }
 
     private static void bookNewCar(BookingService bookingService, UserService userService, CarService carService, Scanner scanner) {
+        viewAllCars(carService);
+        System.out.println("Select a reg number");
+        String regNum = scanner.nextLine();
 
+        Car[] cars = carService.getCars();
+        Car curCar = null;
+
+        for (Car car : cars) {
+            if (car.getRegNumber().equals(regNum)) {
+                curCar = car;
+            }
+        }
+
+        if (curCar == null) {
+            System.out.println("Car not found");
+            return;
+        }
+
+        viewAllUsers(userService);
+        System.out.println("Choose user ID");
+        String id = scanner.nextLine();
+
+        User[] users = userService.getUsers();
+        User curUser = null;
+
+        for (User user : users) {
+            if (user.getId().toString().equals(id)) {
+                curUser = user;
+            }
+        }
+
+        if (curUser == null) {
+            System.out.println("User not found");
+            return;
+        }
+
+        UUID bookingRef = UUID.randomUUID();
+
+        bookingService.registerNewBooking(bookingRef, curUser, curCar);
     }
 
 }
