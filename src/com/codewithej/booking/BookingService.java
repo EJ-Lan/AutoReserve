@@ -5,6 +5,7 @@ import com.codewithej.car.Car;
 import com.codewithej.car.CarService;
 import com.codewithej.user.User;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 public class BookingService {
@@ -21,29 +22,30 @@ public class BookingService {
         return bookingDAO.getBookings();
     }
 
-    public void registerNewBooking(UUID bookingRef, User user, Car car) {
+    public int registerNewBooking(UUID bookingRef, User user, Car car) {
         Booking booking = new Booking(bookingRef, user, car);
         bookingDAO.saveBooking(booking);
         carService.removeCar(booking);
-        System.out.println("Successfully booked car with reg number " + car.getRegNumber() + " for user " + user.toString());
+        return 1;
     }
 
-    public void searchBookingByUser(User user) {
+    public Booking[] searchBookingByUser(User user) {
         Booking[] bookings = bookingDAO.getBookings();
-
-        boolean found = false;
+        Booking[] userBookings = new Booking[bookings.length];
+        int index = 0;
 
         for (Booking booking : bookings) {
             if (booking != null) {
                 if (booking.getUser().equals(user)) {
-                    System.out.println(booking.toString());
-                    found = true;
+                    userBookings[index++] = booking;
                 }
             }
         }
 
-        if (!found) {
-            System.out.println("user " + user + " has no bookings");
+        if (index == 0) {
+            return new Booking[0];
+        } else {
+            return Arrays.copyOfRange(userBookings, 0, index);
         }
     }
 }

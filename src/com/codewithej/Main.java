@@ -156,9 +156,17 @@ public class Main {
             return;
         }
 
-        Booking[] bookings = bookingService.getBookings();
+        Booking[] bookings = bookingService.searchBookingByUser(curUser);
 
-        bookingService.searchBookingByUser(curUser);
+        if (bookings == null) {
+            System.out.println("user " + curUser + " has no bookings");
+        } else {
+            for (Booking booking : bookings) {
+                if (booking != null) {
+                    System.out.println(booking.toString());
+                }
+            }
+        }
     }
 
     private static void bookNewCar(BookingService bookingService, UserService userService, CarService carService, Scanner scanner) {
@@ -200,7 +208,13 @@ public class Main {
 
         UUID bookingRef = UUID.randomUUID();
 
-        bookingService.registerNewBooking(bookingRef, curUser, curCar);
+        int result = bookingService.registerNewBooking(bookingRef, curUser, curCar);
+
+        if (result > 0) {
+            System.out.println("Successfully booked car with reg number " + curCar.getRegNumber() + " for user " + curUser.toString());
+        } else {
+            System.out.println("Booking Failed");
+        }
     }
 
 }

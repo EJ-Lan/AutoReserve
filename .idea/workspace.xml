@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Add some new functions to the main and blow up the BookingDAO and BookingService for refactoring">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Finish the the helper functions in the main file, add removeCar in CarService, and update BookingDAO as well as BookingService">
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680939999978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finish the the helper functions in the main file, add removeCar in CarService, and update BookingDAO as well as BookingService">
+      <created>1680944324791</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680944324791</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,6 +121,7 @@
     <MESSAGE value="Fill out Car, Booking, and User POJOs also fill out Brand enum" />
     <MESSAGE value="Add CarDAO, BookingDAO, UserDAO, BookingService, CarService, UserService, and work on some helper for the main functions" />
     <MESSAGE value="Add some new functions to the main and blow up the BookingDAO and BookingService for refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some new functions to the main and blow up the BookingDAO and BookingService for refactoring" />
+    <MESSAGE value="Finish the the helper functions in the main file, add removeCar in CarService, and update BookingDAO as well as BookingService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the the helper functions in the main file, add removeCar in CarService, and update BookingDAO as well as BookingService" />
   </component>
 </project>
