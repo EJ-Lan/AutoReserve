@@ -2,7 +2,6 @@ package com.codewithej.booking;
 
 
 import com.codewithej.car.Car;
-import com.codewithej.car.CarService;
 import com.codewithej.user.User;
 
 import java.util.Arrays;
@@ -11,11 +10,9 @@ import java.util.UUID;
 public class BookingService {
 
     private BookingDAO bookingDAO;
-    private CarService carService;
 
     public BookingService() {
         this.bookingDAO = new BookingDAO();
-        this.carService = new CarService();
     }
 
     public Booking[] getBookings() {
@@ -25,7 +22,6 @@ public class BookingService {
     public int registerNewBooking(UUID bookingRef, User user, Car car) {
         Booking booking = new Booking(bookingRef, user, car);
         bookingDAO.saveBooking(booking);
-        carService.removeCar(booking);
         return 1;
     }
 

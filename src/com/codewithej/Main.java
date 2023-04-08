@@ -210,6 +210,9 @@ public class Main {
 
         int result = bookingService.registerNewBooking(bookingRef, curUser, curCar);
 
+        Booking booking = new Booking(bookingRef, curUser, curCar);
+        carService.removeCar(booking);
+
         if (result > 0) {
             System.out.println("Successfully booked car with reg number " + curCar.getRegNumber() + " for user " + curUser.toString());
         } else {
