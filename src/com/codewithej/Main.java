@@ -1,5 +1,6 @@
 package com.codewithej;
 
+import com.codewithej.booking.Booking;
 import com.codewithej.booking.BookingService;
 import com.codewithej.car.Car;
 import com.codewithej.car.CarService;
@@ -7,6 +8,7 @@ import com.codewithej.user.User;
 import com.codewithej.user.UserService;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,21 +21,24 @@ public class Main {
         System.out.println();
 
         int input = Integer.valueOf(scanner.nextLine());
-        cliAction(input, bookingService, carService, userService);
+        cliAction(input, bookingService, carService, userService, scanner);
 
     }
 
-    private static void cliAction(int input, BookingService bookingService, CarService carService,UserService userService) {
+    private static void cliAction(int input, BookingService bookingService, CarService carService,UserService userService, Scanner scanner) {
         while (input != 7) {
             switch (input) {
                 case 1:
                     // Book Car
+                    bookNewCar(bookingService, userService, carService, scanner);
                     break;
                 case 2:
                     // View All User Booked Cars
+                    viewAllUserBookedCars(bookingService, userService, scanner);
                     break;
                 case 3:
                     // View All Bookings
+                    viewAllBookings(bookingService);
                     break;
                 case 4:
                     // View Available Cars
@@ -60,8 +65,8 @@ public class Main {
                 System.out.println();
             }
 
-            Scanner scanner = new Scanner(System.in);
-            input = Integer.valueOf(scanner.nextLine());
+            Scanner scan = new Scanner(System.in);
+            input = Integer.valueOf(scan.nextLine());
         }
     }
 
@@ -106,6 +111,18 @@ public class Main {
         if (!found) {
             System.out.println("No electric cars");
         }
+    }
+
+    private static void viewAllBookings(BookingService bookingService) {
+
+    }
+
+    private static void viewAllUserBookedCars(BookingService bookingService, UserService userService, Scanner scanner) {
+
+    }
+
+    private static void bookNewCar(BookingService bookingService, UserService userService, CarService carService, Scanner scanner) {
+
     }
 
 }

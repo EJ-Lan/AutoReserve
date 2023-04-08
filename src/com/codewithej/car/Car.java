@@ -4,23 +4,23 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Car {
-    private int regNumber;
+    private String regNumber;
     private BigDecimal rentalPricePerDay;
     private Brand brand;
     private Boolean electric;
 
-    public Car(int regNumber, BigDecimal rentalPricePerDay, Brand brand, Boolean electric) {
+    public Car(String regNumber, BigDecimal rentalPricePerDay, Brand brand, Boolean electric) {
         this.regNumber = regNumber;
         this.rentalPricePerDay = rentalPricePerDay;
         this.brand = brand;
         this.electric = electric;
     }
 
-    public int getRegNumber() {
+    public String getRegNumber() {
         return regNumber;
     }
 
-    public void setRegNumber(int regNumber) {
+    public void setRegNumber(String regNumber) {
         this.regNumber = regNumber;
     }
 

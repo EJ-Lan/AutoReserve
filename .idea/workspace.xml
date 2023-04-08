@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Fill out Car, Booking, and User POJOs also fill out Brand enum">
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" afterDir="false" />
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Add CarDAO, BookingDAO, UserDAO, BookingService, CarService, UserService, and work on some helper for the main functions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680726247257</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add CarDAO, BookingDAO, UserDAO, BookingService, CarService, UserService, and work on some helper for the main functions">
+      <created>1680757894125</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680757894125</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -97,6 +103,7 @@
     <MESSAGE value="Add my package" />
     <MESSAGE value="Create classes and update main logic" />
     <MESSAGE value="Fill out Car, Booking, and User POJOs also fill out Brand enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fill out Car, Booking, and User POJOs also fill out Brand enum" />
+    <MESSAGE value="Add CarDAO, BookingDAO, UserDAO, BookingService, CarService, UserService, and work on some helper for the main functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CarDAO, BookingDAO, UserDAO, BookingService, CarService, UserService, and work on some helper for the main functions" />
   </component>
 </project>

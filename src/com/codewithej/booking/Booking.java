@@ -8,17 +8,17 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Booking {
+    private UUID bookingID;
     private User user;
     private Car car;
     private boolean isCanceled;
-    private UUID bookingID;
     private LocalTime bookingTime;
 
-    public Booking(User user, Car car, boolean isCanceled, UUID bookingID, LocalTime bookingTime) {
+    public Booking(UUID bookingID, User user, Car car, boolean isCanceled, LocalTime bookingTime) {
+        this.bookingID = bookingID;
         this.user = user;
         this.car = car;
         this.isCanceled = isCanceled;
-        this.bookingID = bookingID;
         this.bookingTime = bookingTime;
     }
 
@@ -65,10 +65,10 @@ public class Booking {
     @Override
     public String toString() {
         return "Booking{" +
-                "user=" + user +
+                "bookingID=" + bookingID +
+                ", user=" + user +
                 ", car=" + car +
                 ", isCanceled=" + isCanceled +
-                ", bookingID=" + bookingID +
                 ", bookingTime=" + bookingTime +
                 '}';
     }
