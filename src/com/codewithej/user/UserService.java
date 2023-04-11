@@ -2,10 +2,10 @@ package com.codewithej.user;
 
 public class UserService {
 
-    private UserDAO userDAO;
+    private UserArrayDataAccessService userDAO;
 
     public UserService() {
-        this.userDAO = new UserDAO();
+        this.userDAO = new UserArrayDataAccessService();
     }
 
     public User[] getUsers() {

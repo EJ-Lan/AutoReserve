@@ -4,10 +4,10 @@ import com.codewithej.booking.Booking;
 
 public class CarService {
 
-    private CarDAO carDAO;
+    private CarDao carDAO;
 
     public CarService() {
-        this.carDAO = new CarDAO();
+        this.carDAO = new CarDao();
     }
 
     public Car[] getCars() {

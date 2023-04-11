@@ -84,7 +84,9 @@ public class Main {
         User[] users = userService.getUsers();
 
         for (User user: users) {
-            System.out.println(user.toString());
+            if (user != null) {
+                System.out.println(user.toString());
+            }
         }
     }
 

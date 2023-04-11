@@ -2,7 +2,7 @@ package com.codewithej.car;
 
 import java.math.BigDecimal;
 
-public class CarDAO {
+public class CarDao {
 
     private static final Car[] cars;
 
