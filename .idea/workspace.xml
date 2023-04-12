@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codewithej/users.csv" afterDir="false" />
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="User Interface with the User">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserArrayDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -130,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680953074403</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="User Interface with the User">
+      <created>1681208981712</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208981712</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +152,7 @@
     <MESSAGE value="Finish the the helper functions in the main file, add removeCar in CarService, and update BookingDAO as well as BookingService" />
     <MESSAGE value="Fix the BookingService Functions to only contain business logic and subsequently update the main functions" />
     <MESSAGE value="Update the BookingService to work without CarService" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the BookingService to work without CarService" />
+    <MESSAGE value="User Interface with the User" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Interface with the User" />
   </component>
 </project>

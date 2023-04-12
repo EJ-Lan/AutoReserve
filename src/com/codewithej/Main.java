@@ -1,10 +1,13 @@
 package com.codewithej;
 
 import com.codewithej.booking.Booking;
+import com.codewithej.booking.BookingDAO;
 import com.codewithej.booking.BookingService;
 import com.codewithej.car.Car;
+import com.codewithej.car.CarDAO;
 import com.codewithej.car.CarService;
 import com.codewithej.user.User;
+import com.codewithej.user.UserArrayDataAccessService;
 import com.codewithej.user.UserService;
 
 import java.util.Scanner;
@@ -12,10 +15,18 @@ import java.util.UUID;
 
 public class Main {
     public static void main(String[] args) {
+
+        // Dependencies
+        BookingDAO bookingDAO = new BookingDAO();
+        CarDAO carDAO = new CarDAO();
+        UserArrayDataAccessService userArrayDataAccessService = new UserArrayDataAccessService();
+
+        // Injection
+        BookingService bookingService = new BookingService(bookingDAO);
+        CarService carService = new CarService(carDAO);
+        UserService userService = new UserService(userArrayDataAccessService);
+
         Scanner scanner = new Scanner(System.in);
-        BookingService bookingService = new BookingService();
-        CarService carService = new CarService();
-        UserService userService = new UserService();
 
         displayMenu();
         System.out.println();

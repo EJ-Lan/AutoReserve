@@ -9,10 +9,10 @@ import java.util.UUID;
 
 public class BookingService {
 
-    private BookingDao bookingDAO;
+    private final BookingDAO bookingDAO;
 
-    public BookingService() {
-        this.bookingDAO = new BookingDao();
+    public BookingService(BookingDAO bookingDAO) {
+        this.bookingDAO = bookingDAO;
     }
 
     public Booking[] getBookings() {

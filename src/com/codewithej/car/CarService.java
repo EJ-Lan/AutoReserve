@@ -4,18 +4,18 @@ import com.codewithej.booking.Booking;
 
 public class CarService {
 
-    private CarDao carDAO;
+    private final CarDAO carDao;
 
-    public CarService() {
-        this.carDAO = new CarDao();
+    public CarService(CarDAO carDao) {
+        this.carDao = carDao;
     }
 
     public Car[] getCars() {
-        return carDAO.getCars();
+        return carDao.getCars();
     }
 
     public void removeCar(Booking booking) {
-        Car[] cars = carDAO.getCars();
+        Car[] cars = carDao.getCars();
 
         for (int i = 0; i < cars.length; i++) {
             if (cars[i].equals(booking.getCar())) {

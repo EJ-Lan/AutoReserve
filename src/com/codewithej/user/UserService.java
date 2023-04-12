@@ -2,14 +2,14 @@ package com.codewithej.user;
 
 public class UserService {
 
-    private UserArrayDataAccessService userDAO;
+    private final UserArrayDataAccessService userArrayDataAccessService;
 
-    public UserService() {
-        this.userDAO = new UserArrayDataAccessService();
+    public UserService(UserArrayDataAccessService userArrayDataAccessService) {
+        this.userArrayDataAccessService = userArrayDataAccessService;
     }
 
     public User[] getUsers() {
-        return userDAO.getUsers();
+        return userArrayDataAccessService.getUsers();
     }
 }
 

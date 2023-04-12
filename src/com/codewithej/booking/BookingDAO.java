@@ -1,6 +1,6 @@
 package com.codewithej.booking;
 
-public class BookingDao {
+public class BookingDAO {
     private static Booking[] bookings;
     private static int nextAvailableSlot = 0;
 
