@@ -1,9 +1,7 @@
 package com.codewithej.booking;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class CarBookingDao {
 
@@ -22,8 +20,5 @@ public class CarBookingDao {
 
     }
 
-    public void cancelCarBooking(UUID id) {
-
-    }
 
 }
