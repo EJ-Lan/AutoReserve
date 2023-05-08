@@ -1,7 +1,8 @@
 package com.codewithej.user;
 
-import java.io.FileNotFoundException;
+import java.util.List;
 
 public interface UserDao {
-    User[] getUsers() throws FileNotFoundException;
+
+    List<User> getUsers();
 }

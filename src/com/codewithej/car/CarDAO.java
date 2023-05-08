@@ -1,23 +1,18 @@
 package com.codewithej.car;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 
 public class CarDAO {
 
-    private static final Car[] cars;
+    private static final List<Car> CARS = Arrays.asList(
+            new Car("1234", new BigDecimal("89.00"), Brand.TESLA, true),
+            new Car("5678", new BigDecimal("50.00"), Brand.AUDI, false),
+            new Car("5678", new BigDecimal("77.00"), Brand.MERCEDES, false)
+    );
 
-    static {
-        cars = new Car[] {
-                new Car("12324", new BigDecimal("100"),Brand.MERCEDES,false),
-                new Car("1254", new BigDecimal("120"), Brand.AUDI, false),
-                new Car("514", new BigDecimal("200"), Brand.TESLA, true),
-                new Car ("15", new BigDecimal("90"), Brand.BMW, false)
-        };
-    }
-
-
-    public Car[] getCars() {
-
-        return cars;
+    public List<Car> getAllCars() {
+        return CARS;
     }
 }

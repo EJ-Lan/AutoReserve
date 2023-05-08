@@ -1,46 +1,24 @@
 package com.codewithej.user;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 public class UserArrayDataAccessService implements UserDao {
 
+    private static final User[] users;
+
+    static {
+        users = new User[]{
+                new User(UUID.fromString("8ca51d2b-aaaf-4bf2-834a-e02964e10fc3"), "James"),
+                new User(UUID.fromString("b10d126a-3608-4980-9f9c-aa179f5cebc3"), "Jamila")
+        };
+    }
+
+
     @Override
-    public User[] getUsers() {
-        User[] users = new User[100];
-
-        String path = "src/com/codewithej/users.csv";
-
-        File file;
-        try {
-            file = new File(path);
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-            throw new IllegalStateException(e);
-        }
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-            int i = 0;
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] fields = line.split(",");
-                UUID id = UUID.fromString(fields[0]);
-                String name = fields[1];
-                users[i++] = new User(name, id); // add the user to the array
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return users;
+    public List<User> getUsers() {
+        return Arrays.asList(users);
     }
 }
-

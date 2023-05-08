@@ -1,27 +1,47 @@
 package com.codewithej.car;
 
-import com.codewithej.booking.Booking;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class CarService {
 
-    private final CarDAO carDao;
+    private final CarDAO carDAO;
 
-    public CarService(CarDAO carDao) {
-        this.carDao = carDao;
+    public CarService(CarDAO carDAO) {
+        this.carDAO = carDAO;
     }
 
-    public Car[] getCars() {
-        return carDao.getCars();
+    public List<Car> getAllCars() {
+        return carDAO.getAllCars();
     }
 
-    public void removeCar(Booking booking) {
-        Car[] cars = carDao.getCars();
-
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i].equals(booking.getCar())) {
-                cars[i] = null;
-                break;
+    public Car getCar(String regNumber) {
+        for (Car car : getAllCars()) {
+            if (regNumber.equals(car.getRegNumber())) {
+                return car;
             }
         }
+        throw new IllegalStateException(String.format("Car with reg %s not found", regNumber));
+    }
+
+    public List<Car> getAllElectricCars() {
+        List<Car> cars = getAllCars();
+
+        if (cars.size() == 0) {
+            return Collections.emptyList();
+        }
+
+        List<Car> electricCars = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.isElectric()) {
+                electricCars.add(car);
+            }
+        }
+
+
+
+        return electricCars;
     }
 }

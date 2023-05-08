@@ -1,15 +1,26 @@
 package com.codewithej.user;
 
+import java.util.List;
+import java.util.UUID;
+
 public class UserService {
+    private final UserDao userDao;
 
-    private final UserArrayDataAccessService userArrayDataAccessService;
-
-    public UserService(UserArrayDataAccessService userArrayDataAccessService) {
-        this.userArrayDataAccessService = userArrayDataAccessService;
+    public UserService(UserDao userDao) {
+        this.userDao = userDao;
     }
 
-    public User[] getUsers() {
-        return userArrayDataAccessService.getUsers();
+    public List<User> getUsers() {
+        return userDao.getUsers();
+    }
+
+    public User getUserById(UUID id) {
+        for (User user : getUsers()) {
+            if (user.getId().equals(id)) {
+                return user;
+            }
+        }
+        return null;
     }
 }
 

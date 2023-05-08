@@ -1,236 +1,154 @@
 package com.codewithej;
 
-import com.codewithej.booking.Booking;
-import com.codewithej.booking.BookingDAO;
-import com.codewithej.booking.BookingService;
+import com.codewithej.booking.CarBooking;
+import com.codewithej.booking.CarBookingDao;
+import com.codewithej.booking.CarBookingService;
 import com.codewithej.car.Car;
 import com.codewithej.car.CarDAO;
 import com.codewithej.car.CarService;
 import com.codewithej.user.User;
-import com.codewithej.user.UserArrayDataAccessService;
+import com.codewithej.user.UserDao;
+import com.codewithej.user.UserFileDataAccessService;
 import com.codewithej.user.UserService;
 
+import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        // Dependencies
-        BookingDAO bookingDAO = new BookingDAO();
-        CarDAO carDAO = new CarDAO();
-        UserArrayDataAccessService userArrayDataAccessService = new UserArrayDataAccessService();
+        UserDao userDao = new UserFileDataAccessService();
+        UserService userService = new UserService(userDao);
 
-        // Injection
-        BookingService bookingService = new BookingService(bookingDAO);
+        CarBookingDao carBookingDao = new CarBookingDao();
+        CarDAO carDAO = new CarDAO();
+
         CarService carService = new CarService(carDAO);
-        UserService userService = new UserService(userArrayDataAccessService);
+        CarBookingService carBookingService = new CarBookingService(carBookingDao, carService);
 
         Scanner scanner = new Scanner(System.in);
 
-        displayMenu();
-        System.out.println();
+        boolean keepLooping = true;
 
-        int input = Integer.valueOf(scanner.nextLine());
-        cliAction(input, bookingService, carService, userService, scanner);
-
+        while (keepLooping) {
+            try {
+                displayMenu();
+                String choice = scanner.nextLine();
+                switch (Integer.parseInt(choice)) {
+                    case 1 -> bookCar(userService, carBookingService, scanner);
+                    case 2 -> displayAllUserBookedCars(userService, carBookingService, scanner);
+                    case 3 -> allBookings(carBookingService);
+                    case 4 -> displayAvailableCars(carBookingService, false);
+                    case 5 -> displayAvailableCars(carBookingService, true);
+                    case 6 -> displayAllUsers(userService);
+                    case 7 -> keepLooping = false;
+                    default -> System.out.println(choice + " not a valid option ❌");
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
-    private static void cliAction(int input, BookingService bookingService, CarService carService,UserService userService, Scanner scanner) {
-        while (input != 7) {
-            switch (input) {
-                case 1:
-                    // Book Car
-                    bookNewCar(bookingService, userService, carService, scanner);
-                    break;
-                case 2:
-                    // View All User Booked Cars
-                    viewAllUserBookedCars(bookingService, userService, scanner);
-                    break;
-                case 3:
-                    // View All Bookings
-                    viewAllBookings(bookingService);
-                    break;
-                case 4:
-                    // View Available Cars
-                    viewAllCars(carService);
-                    break;
-                case 5:
-                    // View Available Electric Cars
-                    viewAllElectricCars(carService);
-                    break;
-                case 6:
-                    // View all users
-                    viewAllUsers(userService);
-                    break;
-                case 7:
-                    // Exit
-                    break;
-                default:
-                    System.out.println(input + " not a valid option");
+    private static void allBookings(CarBookingService carBookingService) {
+        List<CarBooking> bookings = carBookingService.getBookings();
+        if (bookings.isEmpty()) {
+            System.out.println("No bookings available 😕");
+            return;
+        }
+        for (CarBooking booking : bookings) {
+            System.out.println("booking = " + booking);
+        }
+    }
+
+    private static void displayAllUsers(UserService userService) {
+        List<User> users = userService.getUsers();
+        if (users.isEmpty()) {
+            System.out.println("❌ No users in the system");
+            return;
+        }
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    private static void displayAvailableCars(CarBookingService carBookingService, boolean isElectric) {
+        List<Car> availableCars = isElectric ? carBookingService.getAvailableElectricCars() : carBookingService.getAvailableCars();
+        if (availableCars.isEmpty()) {
+            System.out.println("❌ No cars available for renting");
+            return;
+        }
+        for (Car availableCar : availableCars) {
+            System.out.println(availableCar);
+        }
+    }
+
+    private static void displayAllUserBookedCars(UserService userService,
+                                                 CarBookingService carBookingService,
+                                                 Scanner scanner) {
+        displayAllUsers(userService);
+
+        System.out.println("➡️ select user id");
+        String userId = scanner.nextLine();
+
+        User user = userService.getUserById(UUID.fromString(userId));
+        if (user == null) {
+            System.out.println("❌ No user found with id " + userId);
+            return;
+        }
+
+        List<Car> userBookedCars = carBookingService.getUserBookedCars(user.getId());
+        if (userBookedCars.isEmpty()) {
+            System.out.printf("❌ user %s has no cars booked", user);
+            return;
+        }
+        for (Car userBookedCar : userBookedCars) {
+            System.out.println(userBookedCar);
+        }
+    }
+
+    private static void bookCar(UserService userService, CarBookingService carBookingService, Scanner scanner) {
+        displayAvailableCars(carBookingService, false);
+
+        System.out.println("➡️ select car reg number");
+        String regNumber = scanner.nextLine();
+
+        displayAllUsers(userService);
+
+        System.out.println("➡️ select user id");
+        String userId = scanner.nextLine();
+
+        try {
+            User user = userService.getUserById(UUID.fromString(userId));
+            if (user == null) {
+                System.out.println("❌ No user found with id " + userId);
+            } else {
+                UUID bookingId = carBookingService.bookCar(user, regNumber);
+                String confirmationMessage = """
+                        🎉 Successfully booked car with reg number %s for user %s
+                        Booking ref: %s
+                        """.formatted(regNumber, user, bookingId);
+                System.out.println(confirmationMessage);
             }
 
-            if (input != 7) {
-                System.out.println();
-                displayMenu();
-                System.out.println();
-            }
-
-            Scanner scan = new Scanner(System.in);
-            input = Integer.valueOf(scan.nextLine());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
     private static void displayMenu() {
-        System.out.println("1 - Book Car");
-        System.out.println("2 - View All User Booked Cars");
-        System.out.println("3 - View All Bookings");
-        System.out.println("4 - View Available Cars");
-        System.out.println("5 - View Available Electric Cars");
-        System.out.println("6 - View All Users");
-        System.out.println("7 - Exit");
-    }
-
-    private static void viewAllUsers(UserService userService) {
-        User[] users = userService.getUsers();
-
-        for (User user: users) {
-            if (user != null) {
-                System.out.println(user.toString());
-            }
-        }
-    }
-
-    private static void viewAllCars(CarService carService) {
-        Car[] cars = carService.getCars();
-
-        for (Car car: cars) {
-            if (car != null) {
-                System.out.println(car.toString());
-            }
-        }
-    }
-
-    private static void viewAllElectricCars(CarService carService) {
-        Car[] cars = carService.getCars();
-
-        boolean found = false;
-
-        for (Car car: cars) {
-            if (car != null) {
-                if (car.getElectric()) {
-                    System.out.println(car.toString());
-                    found = true;
-                }
-            }
-        }
-
-        if (!found) {
-            System.out.println("No electric cars");
-        }
-    }
-
-    private static void viewAllBookings(BookingService bookingService) {
-        Booking[] bookings = bookingService.getBookings();
-
-        boolean found = false;
-
-        for (Booking booking : bookings) {
-            if (booking == null) {
-                continue;
-            } else {
-                System.out.println(booking.toString());
-                found = true;
-            }
-        }
-
-        if (!found) {
-            System.out.println("No bookings available");
-        }
-
-    }
-
-    private static void viewAllUserBookedCars(BookingService bookingService, UserService userService, Scanner scanner) {
-        viewAllUsers(userService);
-        System.out.println("Choose user ID");
-        String id = scanner.nextLine();
-
-        User[] users = userService.getUsers();
-        User curUser = null;
-
-        for (User user : users) {
-            if (user.getId().toString().equals(id)) {
-                curUser = user;
-            }
-        }
-
-        if (curUser == null) {
-            System.out.println("User not found");
-            return;
-        }
-
-        Booking[] bookings = bookingService.searchBookingByUser(curUser);
-
-        if (bookings == null) {
-            System.out.println("user " + curUser + " has no bookings");
-        } else {
-            for (Booking booking : bookings) {
-                if (booking != null) {
-                    System.out.println(booking.toString());
-                }
-            }
-        }
-    }
-
-    private static void bookNewCar(BookingService bookingService, UserService userService, CarService carService, Scanner scanner) {
-        viewAllCars(carService);
-        System.out.println("Select a reg number");
-        String regNum = scanner.nextLine();
-
-        Car[] cars = carService.getCars();
-        Car curCar = null;
-
-        for (Car car : cars) {
-            if (car.getRegNumber().equals(regNum)) {
-                curCar = car;
-            }
-        }
-
-        if (curCar == null) {
-            System.out.println("Car not found");
-            return;
-        }
-
-        viewAllUsers(userService);
-        System.out.println("Choose user ID");
-        String id = scanner.nextLine();
-
-        User[] users = userService.getUsers();
-        User curUser = null;
-
-        for (User user : users) {
-            if (user.getId().toString().equals(id)) {
-                curUser = user;
-            }
-        }
-
-        if (curUser == null) {
-            System.out.println("User not found");
-            return;
-        }
-
-        UUID bookingRef = UUID.randomUUID();
-
-        int result = bookingService.registerNewBooking(bookingRef, curUser, curCar);
-
-        Booking booking = new Booking(bookingRef, curUser, curCar);
-        carService.removeCar(booking);
-
-        if (result > 0) {
-            System.out.println("Successfully booked car with reg number " + curCar.getRegNumber() + " for user " + curUser.toString());
-        } else {
-            System.out.println("Booking Failed");
-        }
+        System.out.println("""
+                \n
+                1️⃣ - Book Car
+                2️⃣ - View All User Booked Cars
+                3️⃣ - View All Bookings
+                4️⃣ - View Available Cars
+                5️⃣ - View Available Electric Cars
+                6️⃣ - View all users
+                7️⃣ - Exit
+                """);
     }
 
 }

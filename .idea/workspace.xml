@@ -4,13 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="User Interface with the User">
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Add Dependency Injection">
+      <change afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserFileDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-04-05_2_22_p_m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-04-05_2_22_p_m___Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/CarBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserArrayDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserArrayDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -138,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681208981712</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add Dependency Injection">
+      <created>1681264064929</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681264064929</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -153,6 +169,7 @@
     <MESSAGE value="Fix the BookingService Functions to only contain business logic and subsequently update the main functions" />
     <MESSAGE value="Update the BookingService to work without CarService" />
     <MESSAGE value="User Interface with the User" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Interface with the User" />
+    <MESSAGE value="Add Dependency Injection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dependency Injection" />
   </component>
 </project>

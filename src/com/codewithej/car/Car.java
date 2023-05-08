@@ -7,13 +7,14 @@ public class Car {
     private String regNumber;
     private BigDecimal rentalPricePerDay;
     private Brand brand;
-    private Boolean electric;
 
-    public Car(String regNumber, BigDecimal rentalPricePerDay, Brand brand, Boolean electric) {
+    private boolean isElectric;
+
+    public Car(String regNumber, BigDecimal rentalPricePerDay, Brand brand, boolean isElectric) {
         this.regNumber = regNumber;
         this.rentalPricePerDay = rentalPricePerDay;
         this.brand = brand;
-        this.electric = electric;
+        this.isElectric = isElectric;
     }
 
     public String getRegNumber() {
@@ -40,21 +41,21 @@ public class Car {
         this.brand = brand;
     }
 
-    public Boolean getElectric() {
-        return electric;
+    public boolean isElectric() {
+        return isElectric;
     }
 
-    public void setElectric(Boolean electric) {
-        this.electric = electric;
+    public void setElectric(boolean electric) {
+        isElectric = electric;
     }
 
     @Override
     public String toString() {
         return "Car{" +
-                "regNumber=" + regNumber +
+                "regNumber='" + regNumber + '\'' +
                 ", rentalPricePerDay=" + rentalPricePerDay +
                 ", brand=" + brand +
-                ", electric=" + electric +
+                ", isElectric=" + isElectric +
                 '}';
     }
 
@@ -63,11 +64,11 @@ public class Car {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return regNumber == car.regNumber && Objects.equals(rentalPricePerDay, car.rentalPricePerDay) && brand == car.brand && Objects.equals(electric, car.electric);
+        return isElectric == car.isElectric && Objects.equals(regNumber, car.regNumber) && Objects.equals(rentalPricePerDay, car.rentalPricePerDay) && brand == car.brand;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regNumber, rentalPricePerDay, brand, electric);
+        return Objects.hash(regNumber, rentalPricePerDay, brand, isElectric);
     }
 }
