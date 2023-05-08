@@ -11,7 +11,7 @@ public class UserFileDataAccessService implements UserDao {
 
     @Override
     public List<User> getUsers() {
-        File file = new File("src/com/amigoscode/users.csv");
+        File file = new File("src/com/codewithej/users.csv");
 
         List<User> users = new ArrayList<>();
 
