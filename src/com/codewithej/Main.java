@@ -54,35 +54,38 @@ public class Main {
 
     private static void allBookings(CarBookingService carBookingService) {
         List<CarBooking> bookings = carBookingService.getBookings();
+
         if (bookings.isEmpty()) {
             System.out.println("No bookings available 😕");
             return;
         }
-        for (CarBooking booking : bookings) {
-            System.out.println("booking = " + booking);
-        }
+
+        bookings.stream()
+                .forEach(booking -> System.out.println("booking = " + booking));
     }
 
     private static void displayAllUsers(UserService userService) {
         List<User> users = userService.getUsers();
+
         if (users.isEmpty()) {
             System.out.println("❌ No users in the system");
             return;
         }
-        for (User user : users) {
-            System.out.println(user);
-        }
+
+        users.stream()
+                .forEach(System.out::println);
     }
 
     private static void displayAvailableCars(CarBookingService carBookingService, boolean isElectric) {
         List<Car> availableCars = isElectric ? carBookingService.getAvailableElectricCars() : carBookingService.getAvailableCars();
+
         if (availableCars.isEmpty()) {
             System.out.println("❌ No cars available for renting");
             return;
         }
-        for (Car availableCar : availableCars) {
-            System.out.println(availableCar);
-        }
+
+        availableCars.stream()
+                .forEach(System.out::println);
     }
 
     private static void displayAllUserBookedCars(UserService userService,
@@ -104,9 +107,9 @@ public class Main {
             System.out.printf("❌ user %s has no cars booked", user);
             return;
         }
-        for (Car userBookedCar : userBookedCars) {
-            System.out.println(userBookedCar);
-        }
+
+        userBookedCars.stream()
+                .forEach(System.out::println);
     }
 
     private static void bookCar(UserService userService, CarBookingService carBookingService, Scanner scanner) {
@@ -127,12 +130,11 @@ public class Main {
             } else {
                 UUID bookingId = carBookingService.bookCar(user, regNumber);
                 String confirmationMessage = """
-                        🎉 Successfully booked car with reg number %s for user %s
-                        Booking ref: %s
-                        """.formatted(regNumber, user, bookingId);
+                    🎉 Successfully booked car with reg number %s for user %s
+                    Booking ref: %s
+                    """.formatted(regNumber, user, bookingId);
                 System.out.println(confirmationMessage);
             }
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
