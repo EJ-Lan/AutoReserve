@@ -1,4 +1,4 @@
-# CLIProject
+# CarBookingSystem
 
 This is a CLI Project using Java
 
