@@ -1,6 +1,6 @@
 # CarBookingSystem
 
-This is a CLI Project using Java
+This is a CLI Project using Java where I make a Backend Application for a Car Booking System
 
 It is a Car booking system with 6 features:
 1️⃣ - Book Car
