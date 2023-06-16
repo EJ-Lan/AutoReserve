@@ -4,29 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Changed The Methods Within The Main to Streams">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserFakerDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Convert Project To Maven and Add Java Faker Dependency">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codewithej/booking/CarBookingServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codewithej/car/CarServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codewithej/user/UserFakerDataAccessServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/codewithej/user/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBookingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBookingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserArrayDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserArrayDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserFileDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserFileDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/users.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +57,65 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ervin\Desktop\OnlineLearning\AmigosCode\JavaMasterClass\JavaMasterClass\Project\CarBookingSystem\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.codewithej.user" />
+      <recent name="com.codewithej.car" />
+      <recent name="com.codewithej.booking" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CarServiceTest">
+    <configuration name="CarServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codewithej.car.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codewithej.car" />
+      <option name="MAIN_CLASS_NAME" value="com.codewithej.car.CarServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserFakerDataAccessServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codewithej.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codewithej.user" />
+      <option name="MAIN_CLASS_NAME" value="com.codewithej.user.UserFakerDataAccessServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CarBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.codewithej.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.codewithej.user" />
+      <option name="MAIN_CLASS_NAME" value="com.codewithej.user.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CarServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserFakerDataAccessServiceTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -187,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686803226762</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Convert Project To Maven and Add Java Faker Dependency">
+      <created>1686874630498</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686874630498</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +268,7 @@
     <MESSAGE value="Add Lists and Refactor Code" />
     <MESSAGE value="Get rid of code that is not useful anymore" />
     <MESSAGE value="Changed The Methods Within The Main to Streams" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed The Methods Within The Main to Streams" />
+    <MESSAGE value="Convert Project To Maven and Add Java Faker Dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Convert Project To Maven and Add Java Faker Dependency" />
   </component>
 </project>
