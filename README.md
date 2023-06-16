@@ -1,8 +1,8 @@
-# CarBookingSystem
+# AutoReserve
 
-This is a CLI Project using Java where I make a Backend Application for a Car Booking System
+AutoReserve is a CLI Project using Java where I make a Backend Application for a Car Booking System
 
-It is a Car booking system with 6 features:
+The AutoReserve CLI comes with 6 features:
 1️⃣ - Book Car
 2️⃣ - View All User Booked Cars
 3️⃣ - View All Bookings
