@@ -14,4 +14,31 @@ The AutoReserve CLI comes with 6 features:
 This project is for me to practice N-tier architecture, Interfaces, Dependency Injection, Lists, Streams, Maven, Tests, and Spring Boot
 
 ## N-Tier Architecture
-* POJO Classes `user.java`, `car.java`, 'carBooking.java`
+* Created POJO (Plain Old Java Object) Classes such as `User.java`, `Car.java`, `CarBooking.java`
+* Added business logic in service classes such as `UserService.java`, `CarService.java`, `CarBookingService.java`
+* Added DAO (Data Access Object) classes `UserDAO.java`, `CarDAO.java`, CarBookingDAO.java`
+* Organized code into packages `user`, `car`, `booking`, `com.codewithej`
+
+## OOP (Object Oriented Programming)
+* Implemented OOP concept interfaces in `UserArrayDataAccessService`
+
+## Dependency Injection
+* Implemented dependency injection throughout the codebase
+
+## Lists
+* Switched all array in program into array list
+
+## Streams
+* Shorted methods in the main class by using streams
+
+## Maven
+* Converted the project into a Maven project
+* Implemented `java-faker` Maven repository
+* Created new `UserFakerDataAccessService` to use `java-faker` dependency
+
+## Tests
+* Added JUNIT Jupiter as dependency
+* Wrote tests for `car` and `user` service classes
+
+# Spring Boot
+TO BE CONTINUED
