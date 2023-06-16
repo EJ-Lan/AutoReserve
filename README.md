@@ -26,10 +26,10 @@ This project is for me to practice N-tier architecture, Interfaces, Dependency I
 * Implemented dependency injection throughout the codebase
 
 ## Lists
-* Switched all array in program into array list
+* Switched all arrays in program into array lists
 
 ## Streams
-* Shorted methods in the main class by using streams
+* Shortened methods in the main class by using streams
 
 ## Maven
 * Converted the project into a Maven project
