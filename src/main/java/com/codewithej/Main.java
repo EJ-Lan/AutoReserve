@@ -6,10 +6,7 @@ import com.codewithej.booking.CarBookingService;
 import com.codewithej.car.Car;
 import com.codewithej.car.CarDAO;
 import com.codewithej.car.CarService;
-import com.codewithej.user.User;
-import com.codewithej.user.UserDao;
-import com.codewithej.user.UserFileDataAccessService;
-import com.codewithej.user.UserService;
+import com.codewithej.user.*;
 
 import java.util.List;
 import java.util.Scanner;
@@ -19,7 +16,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        UserDao userDao = new UserFileDataAccessService();
+        UserDao userDao = new UserFakerDataAccessService();
         UserService userService = new UserService(userDao);
 
         CarBookingDao carBookingDao = new CarBookingDao();
@@ -54,38 +51,35 @@ public class Main {
 
     private static void allBookings(CarBookingService carBookingService) {
         List<CarBooking> bookings = carBookingService.getBookings();
-
         if (bookings.isEmpty()) {
             System.out.println("No bookings available 😕");
             return;
         }
-
-        bookings.stream()
-                .forEach(booking -> System.out.println("booking = " + booking));
+        for (CarBooking booking : bookings) {
+            System.out.println("booking = " + booking);
+        }
     }
 
     private static void displayAllUsers(UserService userService) {
         List<User> users = userService.getUsers();
-
         if (users.isEmpty()) {
             System.out.println("❌ No users in the system");
             return;
         }
-
-        users.stream()
-                .forEach(System.out::println);
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 
     private static void displayAvailableCars(CarBookingService carBookingService, boolean isElectric) {
         List<Car> availableCars = isElectric ? carBookingService.getAvailableElectricCars() : carBookingService.getAvailableCars();
-
         if (availableCars.isEmpty()) {
             System.out.println("❌ No cars available for renting");
             return;
         }
-
-        availableCars.stream()
-                .forEach(System.out::println);
+        for (Car availableCar : availableCars) {
+            System.out.println(availableCar);
+        }
     }
 
     private static void displayAllUserBookedCars(UserService userService,
@@ -107,9 +101,9 @@ public class Main {
             System.out.printf("❌ user %s has no cars booked", user);
             return;
         }
-
-        userBookedCars.stream()
-                .forEach(System.out::println);
+        for (Car userBookedCar : userBookedCars) {
+            System.out.println(userBookedCar);
+        }
     }
 
     private static void bookCar(UserService userService, CarBookingService carBookingService, Scanner scanner) {
@@ -130,11 +124,12 @@ public class Main {
             } else {
                 UUID bookingId = carBookingService.bookCar(user, regNumber);
                 String confirmationMessage = """
-                    🎉 Successfully booked car with reg number %s for user %s
-                    Booking ref: %s
-                    """.formatted(regNumber, user, bookingId);
+                        🎉 Successfully booked car with reg number %s for user %s
+                        Booking ref: %s
+                        """.formatted(regNumber, user, bookingId);
                 System.out.println(confirmationMessage);
             }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

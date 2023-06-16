@@ -4,9 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Get rid of code that is not useful anymore">
+    <list default="true" id="1bb52fda-f867-491c-a9c7-88f44de61060" name="Changes" comment="Changed The Methods Within The Main to Streams">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserFakerDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codewithej/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBookingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/booking/CarBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/booking/CarBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/car/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/car/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserArrayDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserArrayDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserFileDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserFileDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codewithej/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codewithej/users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/users.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +56,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/ervin/Desktop/OnlineLearning/AmigosCode/JavaMasterClass/JavaMasterClass/Project/CarBookingSystem",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ervin/Desktop/OnlineLearning/AmigosCode/JavaMasterClass/JavaMasterClass/Project/CarBookingSystem&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ervin\Desktop\OnlineLearning\AmigosCode\JavaMasterClass\JavaMasterClass\Project\CarBookingSystem\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -155,8 +180,26 @@
       <option name="project" value="LOCAL" />
       <updated>1683571681995</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Changed The Methods Within The Main to Streams">
+      <created>1686803226762</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1686803226762</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -173,6 +216,7 @@
     <MESSAGE value="Add Dependency Injection" />
     <MESSAGE value="Add Lists and Refactor Code" />
     <MESSAGE value="Get rid of code that is not useful anymore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get rid of code that is not useful anymore" />
+    <MESSAGE value="Changed The Methods Within The Main to Streams" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed The Methods Within The Main to Streams" />
   </component>
 </project>
