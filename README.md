@@ -12,3 +12,6 @@ The AutoReserve CLI comes with 6 features:
 7️⃣ - Exit
 
 This project is for me to practice N-tier architecture, Interfaces, Dependency Injection, Lists, Streams, Maven, Tests, and Spring Boot
+
+## N-Tier Architecture
+* POJO Classes `user.java`, `car.java`, 'carBooking.java`
