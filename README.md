@@ -16,7 +16,7 @@ This project is for me to practice N-tier architecture, Interfaces, Dependency I
 ## N-Tier Architecture
 * Created POJO (Plain Old Java Object) classes such as `User.java`, `Car.java`, `CarBooking.java`
 * Added business logic in service classes such as `UserService.java`, `CarService.java`, `CarBookingService.java`
-* Added DAO (Data Access Object) classes `UserDAO.java`, `CarDAO.java`, CarBookingDAO.java`
+* Added DAO (Data Access Object) classes `UserDAO.java`, `CarDAO.java`, `CarBookingDAO.java`
 * Organized code into packages `user`, `car`, `booking`, `com.codewithej`
 
 ## OOP (Object Oriented Programming)
