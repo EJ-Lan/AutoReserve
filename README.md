@@ -11,7 +11,7 @@ The AutoReserve CLI comes with 6 features:
 6️⃣ - View all users
 7️⃣ - Exit
 
-This project is for me to practice N-tier architecture, Interfaces, Dependency Injection, Lists, Streams, Maven, Tests, and Spring Boot
+This project is for me to practice N-tier architecture, Interfaces, Dependency Injection, Lists, Streams, Maven, and Tests
 
 ## N-Tier Architecture
 * Created POJO (Plain Old Java Object) classes such as `User.java`, `Car.java`, `CarBooking.java`
@@ -39,6 +39,3 @@ This project is for me to practice N-tier architecture, Interfaces, Dependency I
 ## Tests
 * Added JUNIT Jupiter as dependency
 * Wrote tests for `car` and `user` service classes
-
-# Spring Boot
-TO BE CONTINUED
